@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class Task2</title>
+</head>
+
+<body>
+    <h1>Function Task</h1>
+    <h4>Task 1</h4>
+    <p> Given an array containing 7 numbers, {7,13,15,21,30,4,95}, write a function that takes as argument an array
+        containing this 7 numbers, and returns the even number in the array doubled as an updated array</p>
+    <h6>Test case</h6>
+    <p>{7,13,15,21,30,4,95}</p>
+    <p>Result</p>
+    <p id="takeResultA"></p>
+
+    <h4>Task 2</h4>
+    <p>Create a javascript function that accepts an array of strings and return a new array containing the length of
+        each strings inthe input array</p>
+    <h6>Test case</h6>
+    <p>let thingsName = ["Market", "Communication", "Names", "Schools"]; </p>
+    <p>Result</p>
+    <p id="takeResultB"></p>
+
+    <h4>Task 3</h4>
+    <p>Design a javascript function that takes an array of floating point number and returns the index of the smallest
+        value of the array</p>
+    <h6>Test Case</h6>
+    <p> const testArray7 = [3.14, 2.71, 1.618, 1.0]; <br>Expected result: 3 (index of 1.0) <br>const testArray8 = [10.5,
+        20.2, 5.7, 30.1];<br>Expected result: 2 (index of 5.7)<br>const testArray9 = [-1.5, -2.0, -0.5,
+        -0.2];<br>Expected result: 1 (index of -2.0)</p>
+    <p>Result</p>
+    <p id="takeresultC"></p>
+
+    <h4>Task4</h4>
+    <p>wrtie a javascript function that accept two array of integers and check if they are equal i.e they have the same
+        elements in the same order</p>
+    <h6>Test Case</h6>
+    <p>const testArray10 = [1, 2, 3, 4, 5];<br>
+        const testArray11 = [1, 2, 3, 4, 5]; // Expected result: true (arrays are equal) <br>
+        const testArray12 = [1, 2, 3, 4, 5];<br>
+        const testArray13 = [1, 2, 3, 4, 6]; // Expected result: false (arrays are not equal)<br>
+        const testArray14 = [];<br>
+        const testArray15 = []; // Edge case: Both empty arrays, Expected result: true (arrays are equal)<br>
+        const testArray16 = [1, 2, 3];<br>
+        const testArray17 = [1, 2, 3, 4]; // Expected result: false (arrays are not equal)</p>
+    <p>Result</p>
+    <p id="takeresultD"></p>
+
+    <script>
+
+
+
+        let num = [7, 13, 15, 21, 30, 4, 95];
+        let arrayOne = newArray(num);
+        takeResultA.innerHTML = (`${arrayOne} <br>`);
+
+        function newArray(num) {
+            for (let i = 0; i < num.length; i++) {
+                let numOne = num[i]
+                if (num[i] % 2 == 0) {
+                    numOne = numOne * 2
+
+                }
+                num[i] = numOne
+            }
+            return num;
+        }
+
+
+        let thingsName = ["Market", "Communication", "Names", "Schools"]
+        let newName = firstName(thingsName);
+        takeResultB.innerHTML = newName;
+
+        function firstName(thingsName) {
+            let secondName = []
+            for (let i = 0; i < thingsName.length; i++) {
+                secondName.push(thingsName[i].length)
+            }
+            return secondName;
+
+        }
+
+        let floatNumber = [9.7, 2.14, 6.71, 1.61, 1.0,];
+        let floatNew = floatB(floatNumber);
+        takeresultC.innerHTML = floatNew;
+
+        function floatB(noFloat) {
+            let newCheck = noFloat[0];
+
+            for (let i = 1; i < noFloat.length; i++) {
+                let numberFloating = noFloat[i]
+
+                if (newCheck > numberFloating) {
+                    newCheck = numberFloating
+
+                }
+
+            }
+            let noFloatB = noFloat.indexOf(newCheck)
+            return noFloatB;
+
+        }
+
+
+        const testArray10 = [1, 2, 3, 4, 5];
+        const testArray11 = [1, 2, 3, 4, 5]; // Expected result: true (arrays are equal)
+        const testArray12 = [1, 2, 3, 4, 5];
+        const testArray13 = [1, 2, 3, 4, 6]; // Expected result: false (arrays are not equal)
+        const testArray14 = [];
+        const testArray15 = []; // Edge case: Both empty arrays, Expected result: true (arrays are equal)
+        const testArray16 = [1, 2, 3];
+        const testArray17 = [1, 2, 3, 4]; // Expected result: false (arrays are not equal)
+        let test1 = check(testArray10, testArray11);
+        let test2 = check(testArray12, testArray13);
+        let test3 = check(testArray14, testArray15);
+        let test4 = check(testArray16, testArray17);
+
+        takeresultD.innerHTML = (`${test1} <br> ${test2} <br> ${test3} <br>${test4}`)
+
+
+        function check(testA, testB) {
+            let checknum1 = testA.length
+            let checknum2 = testB.length
+
+            if (checknum1 != checknum2) {
+                return false;
+            } else {
+                for (let i = 0; i < checknum1; i++) {
+                    let Numnew1 = testA[i]
+                    let Numnew2 = testB[i]
+                    if (Numnew1 != Numnew2) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
